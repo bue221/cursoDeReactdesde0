@@ -1,0 +1,10 @@
+.contenedor {
+    background: white;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid gainsboro;
+    border-radius: 20px;
+}
