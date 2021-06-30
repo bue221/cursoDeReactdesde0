@@ -1,41 +1,21 @@
 import React, { useState } from "react";
-import Primero from "./components/primero/Primero";
+
+import styles from './App.module.css'
+
+import Formulario from "./components/formulario";
+import Tarjeta from "./components/tarjeta";
 
 const App = () => {
-  const [formulario, setFormulario] = useState({
-    titulo: "",
-  });
-
-  const [data, setData] = useState<any>([]);
-
-  const handleChange = (e: any) => {
-    setFormulario({
-      ...formulario,
-      titulo: e.target.value,
-    });
-  };
-
-  const guardarNota = () => {
-    var dataDePaso = {
-      titulo: formulario.titulo,
-    };
-    setData([...data, dataDePaso]);
-  };
 
   return (
-    <div>
-      <input
-        type="text"
-        name="titulo"
-        placeholder="Ingrese su titulo"
-        value={formulario.titulo}
-        onChange={handleChange}
-      />
-      <button onClick={guardarNota}>Crear nota</button>
-      {data?.map((i: any, index: number) => (
-        <h2 key={index}>{i.titulo}</h2>
-      ))}
-      <Primero />
+    <div className={styles.contenedor} >
+      <Formulario />
+      <Tarjeta titulo='titulo 1' descripcion='descripcion 1'/>
+      <Tarjeta titulo='titulo 2' descripcion='descripcion 1'/>
+      <Tarjeta titulo='titulo 3' descripcion='descripcion 1'/>
+      <Tarjeta titulo='titulo 4' descripcion='descripcion 1'/>
+      <Tarjeta titulo='titulo 5' descripcion='descripcion 1'/>
+      <Tarjeta titulo='titulo 6' descripcion='descripcion 1'/>
     </div>
   );
 };
